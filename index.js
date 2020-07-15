@@ -32,15 +32,15 @@ class CountdownTimer {
     refs.secs.textContent = `${secs}`;
   }
 
-  reverseTimer() {
+  timeDifference() {
     let time = null;
-    setInterval(() => {
-      const currentDate = Date.now();
-      time = this.targetDate - currentDate;
-      this.updateClockface(time);
-    }, 1000);
+    const currentDate = Date.now();
+    time = this.targetDate - currentDate;
+    this.updateClockface(time);
+  }
 
-    return time;
+  reverseTimer() {
+    setInterval(() => this.timeDifference(), 1000);
   }
 }
 
