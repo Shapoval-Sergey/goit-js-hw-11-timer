@@ -40,6 +40,7 @@ class CountdownTimer {
   }
 
   reverseTimer() {
+    this.timeDifference();
     setInterval(() => this.timeDifference(), 1000);
   }
 }
